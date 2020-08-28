@@ -9,40 +9,31 @@ import java.util.Collections;
 public class CatTrap {
 
 	public static void main(String[] args) {
-		// We want to create a keyboard object to which the user can have access in the console when he or she is
-		// navigating through the program. Please note that this variable will be passed as an argument and each method
-		// will most likely accept a Scanner variable since most of the methods that will be used utilize in some way or form
-		// the keyboard function.
 		Scanner keyboard = new Scanner(System.in);
-		
-		// We have to then create a string for the name of the user
 		String name = " ";
 		
-		// Has the user played this game before, or not? If the user has played this game before, we don't want to give the same
-		// introduction each time, evidently. This will be passed as an argument for most of the methods that involve the game itself.
+		// Has the user played this game before, or not? If the user has played this game before, we don't want to give the same introduction each time, evidently. 
 		boolean playedBefore = false;
 		
 		// The program should introduce the user into the program by providing him or her with a list of selections.
 		System.out.print("Hello there! Before we start, can I get your name? ");
 		name = keyboard.nextLine(); 
 			
-		// We just want somebody to enter their name so that we could use it constantly throughout the program.
+		// If they didn't enter their name, have them print out this message until they do.
 		while (name.length() == 0) {
 			System.out.print("Oops! You didn't enter a name! Please enter your name here: ");
 			name = keyboard.nextLine();
 		}
-					
-		// I want the name to be upper case, regardless if the user has entered his or her name in lowercase
 		name = name.toUpperCase();
 		// Then, the program will then call the menu function as a point of entry for the user.
 		menu(keyboard, playedBefore, name);
 	}
 	
-	// This serves as the point of entry for the user to navigate throughout the game.
+	// Point of entry
 	public static void menu(Scanner keyboard, boolean playedGameBefore, String name) {
 		// We declare a variable called choice, which allows the user to input his selection
 		String choice;
-					
+		
 		// We also declare a variable called firstCharacterChoice to verify the selection.
 		char firstCharacterChoice;
 		
@@ -127,10 +118,6 @@ public class CatTrap {
 		// Difficulty of the program will be mentioned throughout the tutorial, so I want to be able to use this multiple times.
 		String difficulty;
 		
-		// This will be used as the main coordinates for this level. We want to retain the letter character (the first character)
-		// and the numerical character (the second character). Note that in the main difficulties, we are going to be using arrays
-		// to sort out the letter coordinates from the numerical coordinates.
-		char letterCoordinate, numCoordinate;
 		
 		// When we introduce this to the user, we want the user to know what difficulty he or she selected.
 		// After the tutorial, we need the user to be led to his or her chosen difficulty.
@@ -166,7 +153,7 @@ public class CatTrap {
 			System.out.println();
 		}
 			
-		// The instructions that the user will be given
+		// Instructions
 		System.out.print("\nThe program acting as the mouse is hiding in an unknown coordinate in this grid."
 				+ "\nYour job is to find it and capture it by guessting correctly its coordinate within a set amount of guesses."
 				+ "\nThe way in which you will guess it is very simple; enter a coordinate with the LETTER then the NUMBER afterwards."
@@ -277,8 +264,7 @@ public class CatTrap {
 				System.out.print(gridFormat[i][j] + " ");
 			}
 			System.out.println();
-		}
-		
+		}	
 		
 	}
 	
@@ -288,17 +274,14 @@ public class CatTrap {
 		
 		// I want to verify the length based on the user's difficulty.
 		int length;
-		// We check the character parameter variable choice.
+		// We check the character parameter variable choice. Easy - 5x5 grid. Medium - 8x8 grid. Hard - 10x10 grid.
 		switch (choice) {
-		// If the character parameter variable choice is 'E', then the program will return a length of 5 units.
 		case 'E':
 			length = 5;
 			break;
-		// Otherwise, if the character parameter variable choice is 'M', then the program will return a length of 8 units.
 		case 'M':
 			length = 8;
 			break;
-		// Otherwise, if the character parameter variable choice is 'H' , then the program will return a length of 10 units.
 		default:
 			length = 10;
 			break;
@@ -315,9 +298,6 @@ public class CatTrap {
 		
 		// Round number. We always start at 1 because, evidently, the first round is always ROUND 1 and not ROUND 0, for instance.
 		byte round = 1;
-		
-		// This will be established at the end of the difficulty, and will ask if the user want to play again.
-		String choiceToLeave;
 		
 		// I understand that I could have simply used the length variable 
 		final int LENGTH = length;
@@ -589,10 +569,9 @@ public class CatTrap {
 				Random generationNum = new Random();
 				
 				// We want to get the names of the two players, which explains the characterOne and characterTwo reference variables.
-				// The lengthString variable is used to store the length of the grid that the user desires to play in.
 				// The playerOneCoordinates and the playerTwoCoordinates are mainly used to store the first player and the second player's coordinates
 				// (essentially what does the person want the other user to guess with?)
-				String lengthString, playerOneCoordinates, playerTwoCoordinates;
+				String playerOneCoordinates, playerTwoCoordinates;
 				// At the end, we want to specify who has won. We will change this based on who has actually won.
 				String whoHasWon = "";
 				// The first four variables (userLetter1, userLetter2, userNumber1, userNumber2) refer to both of the user's coordinates
