@@ -9,32 +9,25 @@ import java.util.Collections;
 public class CatTrap {
 
 	public static void main(String[] args) {
-		// We want to create a keyboard object to which the user can have access in the console when he or she is
-		// navigating through the program. Please note that this variable will be passed as an argument and each method
-		// will most likely accept a Scanner variable since most of the methods that will be used utilize in some way or form
-		// the keyboard function.
 		Scanner keyboard = new Scanner(System.in);
 		
 		// We have to then create a string for the name of the user
 		String name = " ";
 		
 		// Has the user played this game before, or not? If the user has played this game before, we don't want to give the same
-		// introduction each time, evidently. This will be passed as an argument for most of the methods that involve the game itself.
+		// introduction each time.
 		boolean playedBefore = false;
-		
-		// The program should introduce the user into the program by providing him or her with a list of selections.
 		System.out.print("Hello there! Before we start, can I get your name? ");
 		name = keyboard.nextLine(); 
 			
-		// We just want somebody to enter their name so that we could use it constantly throughout the program.
+		// If they didn't enter their name, have them enter it again.
 		while (name.length() == 0) {
 			System.out.print("Oops! You didn't enter a name! Please enter your name here: ");
 			name = keyboard.nextLine();
 		}
 					
-		// I want the name to be upper case, regardless if the user has entered his or her name in lowercase
 		name = name.toUpperCase();
-		// Then, the program will then call the menu function as a point of entry for the user.
+		// Tche program will then call the menu function as a point of entry for the user.
 		menu(keyboard, playedBefore, name);
 	}
 	
