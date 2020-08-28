@@ -1,33 +1,9 @@
-/* Title: Dylex Suan
- * Name: Cat Trap
- * Date: January 18, 2018
- * Project Description: This program will be based on a familiar children's game informally known as "Cat and Mouse" where
- * the program will assume the role as a mouse whereas the user will assume the role as the cat, searching for the mouse.
- * There are three difficulties for the game provided: "EASY", "MEDIUM", "HARD".
- * The mouse will generate a random location from which the user has to guess based on the clues that the program provides.
- * The program is also expected to generate a grid after each guess as well as the other guesses that the user has guessed
- * in order to provide a better understanding of his or her position. If the user guesses correctly in the preset amount of guesses
- * then he or she will be asked whether to play again, or whether to return to the main menu to choose a different difficulty.
- * If not, the program will continually ask the user for his/her guess until the amount of preset guesses are exhausted through.
- * Furthermore, the program also provides further functionalities such as the ability to play a one versus one game with another player
- * who will then set the settings accordingly (for instance, if the user wants to work with a 7x7 grid, instead of a 5x5 grid for instance).
- * There are also exit functions if the user wants to exit the game, and opportunities to return back to the main menu.
- */
 
 package cattrap;
 
-// For this program, we want to import the Random class so that we are able to eventually generate Random numbers that
-// will be casted into a character variable.
 import java.util.Random;
-
-// Furthermore, the program should import the Scanner class so that the user is able to input his or her guess on which
-// the randomized generated location may be
 import java.util.Scanner;
-
-// As well, the ArrayList class will be imported for the purpose of creating the grid; this will be discussed further
 import java.util.ArrayList;
-
-// Lastly, the Collections class will be imported for the sake of creating the grid, which will be discussed further into the code.
 import java.util.Collections;
 
 public class CatTrap {
